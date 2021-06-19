@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+parse_legacy_file() {
+    local -r terraform_version_file="$1"
+    echo "v$(cat ${terraform_version_file})"
+}
+
+parse_legacy_file "$1"
