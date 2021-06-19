@@ -4,6 +4,13 @@ set -euo pipefail
 
 download() {
     git clone -b "${ASDF_INSTALL_VERSION}" --depth 1 https://github.com/hashicorp/terraform "${ASDF_DOWNLOAD_PATH}"
+
+    # Workaround: Avoid confirmation when asdf cleaning up repository after installed
+    #
+    # Examples:
+    #     override r--r--r--  tsub/staff for v0.15.2//.git/objects/pack/pack-d9f7124ab09e7d35189a0b7143edbfb6769da991.idx? y
+    #     override r--r--r--  tsub/staff for v0.15.2//.git/objects/pack/pack-d9f7124ab09e7d35189a0b7143edbfb6769da991.pack? y
+    chmod 644 "${ASDF_DOWNLOAD_PATH}"/.git/objects/pack/*
 }
 
 download
