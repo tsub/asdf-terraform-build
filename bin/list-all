@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+list_all() {
+    # TODO: Paginate
+    versions=$(curl -s 'https://api.github.com/repos/hashicorp/terraform/releases?per_page=100' | jq -r '[.[].tag_name] | join(" ")')
+
+    echo "${versions}"
+}
+
+list_all
