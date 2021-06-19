@@ -3,7 +3,7 @@
 set -euo pipefail
 
 download() {
-    git clone -b "${ASDF_INSTALL_VERSION}" --depth 1 https://github.com/hashicorp/terraform "${ASDF_DOWNLOAD_PATH}"
+    git clone -b "v${ASDF_INSTALL_VERSION}" --depth 1 https://github.com/hashicorp/terraform "${ASDF_DOWNLOAD_PATH}"
 
     # Workaround: Avoid confirmation when asdf cleaning up repository after installed
     #
