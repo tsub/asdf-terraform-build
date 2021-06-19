@@ -2,6 +2,8 @@
 
 Terraform plugin with go build for the asdf version manager
 
+Japanese post: [Apple Silicon Mac で複数 Terraform バージョンを管理するために asdf\-terraform\-build を作った \| tsub's blog](https://blog.tsub.me/post/create-asdf-terraform-build/)
+
 ## Motivation
 
 I want to manage multiple versions of Terraform on my Apple Silicon Mac.
